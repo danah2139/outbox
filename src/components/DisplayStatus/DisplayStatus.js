@@ -1,3 +1,4 @@
+import "./displayStatus.css";
 const DisplayStatus = ({ typeClicked }) => {
   const typesDate = [
     "Current Day",
@@ -11,7 +12,14 @@ const DisplayStatus = ({ typeClicked }) => {
     return typesDate.map((type) => {
       return (
         <li>
-          <button onClick={typeClicked(type)}>{type}</button>
+          <button
+            onClick={(event) => {
+              typeClicked(event.target.value);
+            }}
+            value={type.replace("Current ", "").toLowerCase()}
+          >
+            {type}
+          </button>
         </li>
       );
     });

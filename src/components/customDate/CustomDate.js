@@ -1,11 +1,11 @@
-const CustomDate = ({ dateRange, fromSelected, toSelected }) => {
+const CustomDate = ({ dateRange, handleFromSelected, handleToSelected }) => {
   return (
     <div>
       From:
       <input
         type="date"
         onChange={(event) => {
-          fromSelected(event.target.value);
+          handleFromSelected(event.target.value);
         }}
         value={dateRange.from}
       />
@@ -13,7 +13,7 @@ const CustomDate = ({ dateRange, fromSelected, toSelected }) => {
       <input
         type="date"
         onChange={(event) => {
-          toSelected(event.target.value);
+          handleToSelected(event.target.value);
         }}
         value={dateRange.to}
       />
